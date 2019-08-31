@@ -27,7 +27,7 @@ public class Database {
 	
 	  public void addEmployee(Employee e1) throws SQLException {
 	  s1 = "insert into employee (Id,Name,Address,ContactNo) " ;
-	  s2="values("+e1.getId()+", '" + e1.getName() + "', '" + e1.getAddress() +"',"+ e1.getContactNo()+")"; //
+	  s2="values("+e1.getId()+", '" + e1.getName() + "', '" + e1.getAddress() +"','"+ e1.getContactNo()+"')"; //
 	  sql=s1+s2;
 		/* PreparedStatement p = (PreparedStatement) con.prepareStatement(sql); */
 	  stmt = (Statement) con.createStatement();
@@ -58,7 +58,7 @@ public class Database {
 				int id = rs.getInt(1);
 				String name = rs.getString(2);
 				String address = rs.getString(3);
-				int contact = rs.getInt(4);
+				String contact = rs.getString(4);
 				v = new Employee(id, name, address, contact);
 				vList.add(v);
 
@@ -88,7 +88,7 @@ public class Database {
 
 				int itemno = rs.getInt(1);
 				String foodname = rs.getString(2);
-				int unitprice = rs.getInt(3);
+				Double unitprice = rs.getDouble(3);
 				String category = rs.getString(4);
 				v = new Food(itemno, foodname, unitprice, category);
 				vList.add(v);

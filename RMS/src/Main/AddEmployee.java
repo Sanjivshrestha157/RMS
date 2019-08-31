@@ -80,9 +80,9 @@ public class AddEmployee extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource().equals(add)) {
 			int id1=Integer.parseInt( id.getText());
+			String contact1 =contact.getText();
 			String n = name.getText();
 			String address1 = address.getText();
-			int contact1 = Integer.parseInt(contact.getText());
 			Model.Employee v = new Model.Employee(id1,n, address1, contact1);
 			try {
 				db.addEmployee(v);

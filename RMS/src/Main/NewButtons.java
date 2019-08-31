@@ -55,20 +55,21 @@ class NewButtons extends JFrame implements ActionListener
 		setVisible(true);
 	}
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource().equals(b1));
+		if(e.getSource().equals(b1))
 		{
 			setVisible(false);
-			new FoodMenu("Food Menu");}
-		if(e.getSource().equals(b2));
+			new FoodMenu("Food Menu");
+		}
+		 if(e.getSource().equals(b2));
 		{
 			setVisible(false);
 		new Employee("Employee");
 		}
-		if(e.getSource().equals(b3));
+		if(e.getSource().equals(b3))
 		{new Table("Table");}
-		if(e.getSource().equals(b4));
+		if(e.getSource().equals(b4))
 		{new Order("Order");}
-		if(e.getSource().equals(b5));
+		if(e.getSource().equals(b5))
 		{new Bill("Bill");}
 	}
 	

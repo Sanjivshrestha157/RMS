@@ -13,11 +13,11 @@ public class Food {
 		Category="";
 	}
 
-	public Food(int itemno2, String foodname2, int unitprice2, String category2) {
-		FoodName=foodname2;
-		ItemNo=itemno2;
-		UnitPrice=unitprice2;
-		Category=category2;
+	public Food(int item1, String n, Double price1, String category1) {
+		FoodName=n;
+		ItemNo=item1;
+		UnitPrice=price1;
+		Category=category1;
 	}
 
 	public String getFoodName() {

@@ -4,8 +4,8 @@ public class Employee extends Person {
 	private int id;
 	private String name;
 	private String address;
-	private int contact;
-	public Employee(int id1, String n, String address1, int contact1) {
+	private String contact;
+	public Employee(int id1, String n, String address1, String contact1) {
 		id=id1;
 		name=n;
 		address=address1;
@@ -38,12 +38,12 @@ public class Employee extends Person {
 	{
 		this.address=address;
 	}
-	public int getcontact()
+	public String getcontact()
 	{
 		return contact;
 		
 	}
-	public void setContact(int contact)
+	public void setContact(String contact)
 	{
 		this.contact=contact;
 	}

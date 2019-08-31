@@ -20,7 +20,9 @@ public class Employee extends JFrame implements ActionListener {
 		b2=new JButton("EDIT");
 		b2.addActionListener(this);
 		b3=new JButton("DELETE");
+		b3.addActionListener(this);
 		b4=new JButton("Employee Details");
+		b4.addActionListener(this);
 		p1=new JPanel();
 		p=new JPanel();
 		setLayout(new GridLayout(2,2));
@@ -41,6 +43,11 @@ public class Employee extends JFrame implements ActionListener {
 		{
 			
 			new AddEmployee();
+			setVisible(false);
+		}
+		else if(e.getSource().equals(b4))
+		{
+			new ListEmployee();
 			setVisible(false);
 		}
 	}

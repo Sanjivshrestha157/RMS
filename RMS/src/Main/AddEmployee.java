@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -26,6 +27,8 @@ public class AddEmployee extends JFrame implements ActionListener{
 	public AddEmployee() {
 		super("Add New Employee");
 		this.obj = obj;
+		final int WINDOW_WIDTH = 450, WINDOW_HEIGHT = 450;
+		setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
 		try {
 			db = new Database();
 		} catch (SQLException e) {
@@ -40,9 +43,9 @@ public class AddEmployee extends JFrame implements ActionListener{
 		setVisible(true);
 	}
 	public void initializeAll() {
-		// TODO Auto-generated method stub
 		panel1 = new JPanel();
-		panel1.setLayout(new GridLayout(4, 2));
+//		panel1.setLayout(new GridLayout(4, 2));
+		panel1.setBorder(BorderFactory.createBevelBorder(10));
 
 		idLbl = new JLabel("Id: ");
 		panel1.add(idLbl);
@@ -76,10 +79,10 @@ public class AddEmployee extends JFrame implements ActionListener{
 	}
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource().equals(add)) {
-			int id1=Integer.getInteger( id.getText());
+			int id1=Integer.parseInt( id.getText());
 			String n = name.getText();
 			String address1 = address.getText();
-			String contact1 = contact.getText();
+			int contact1 = Integer.parseInt(contact.getText());
 			Model.Employee v = new Model.Employee(id1,n, address1, contact1);
 			try {
 				db.addEmployee(v);
